@@ -67,6 +67,9 @@ students = [
 # 4. Routes
 # ------------------------------
 
+@app.route("/")
+def home():
+    return "EDUOS ML API is running 🚀"
 @app.route("/recommend-skills", methods=["POST"])
 def recommend_skills():
     data = request.get_json()
