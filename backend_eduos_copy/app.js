@@ -3,6 +3,11 @@ require('dotenv').config();
 const http = require('http');
 const cors = require('cors');
 const db = require('./database/db')
+
+app.get("/", (req, res) => {
+  res.send("EDUOS Backend is running 🚀");
+});
+
 const authRoutes = require('./routes/auth-routes');
 const fileRoutes = require('./routes/file-routes');
 const extractRoutes = require('./routes/extract-route');
