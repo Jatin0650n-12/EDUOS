@@ -1,0 +1,65 @@
+[
+{
+"role":"Data Scientist",
+"skills":[
+"Python","Statistics","Linear Algebra","Data Visualization","SQL",
+"Machine Learning","Data Cleaning","Feature Engineering","Model Evaluation","Deep Learning"
+]
+},
+
+{
+"role":"Frontend Developer",
+"skills":[
+"HTML","CSS","JavaScript","DOM Manipulation","Responsive Design",
+"React","State Management","API Integration","Web Performance","Accessibility"
+]
+},
+
+{
+"role":"Backend Developer",
+"skills":[
+"Node.js","Express.js","REST APIs","Authentication","Databases",
+"SQL","MongoDB","Caching","Microservices","Security"
+]
+},
+
+{
+"role":"Full Stack Developer",
+"skills":[
+"HTML","CSS","JavaScript","React","Node.js",
+"Express.js","MongoDB","REST APIs","Authentication","Deployment"
+]
+},
+
+{
+"role":"Machine Learning Engineer",
+"skills":[
+"Python","Statistics","Linear Algebra","Machine Learning","Deep Learning",
+"Model Deployment","Feature Engineering","Data Pipelines","TensorFlow","PyTorch"
+]
+},
+
+{
+"role":"Data Analyst",
+"skills":[
+"Excel","SQL","Python","Data Cleaning","Data Visualization",
+"Statistics","Dashboarding","Business Analysis","Reporting","Data Storytelling"
+]
+},
+
+{
+"role":"DevOps Engineer",
+"skills":[
+"Linux","Docker","Kubernetes","CI/CD","AWS",
+"Infrastructure as Code","Monitoring","Networking","Scripting","Security"
+]
+},
+
+{
+"role":"Cloud Engineer",
+"skills":[
+"AWS","Azure","Cloud Architecture","Networking","Security",
+"Docker","Kubernetes","Infrastructure as Code","Monitoring","Automation"
+]
+}
+]

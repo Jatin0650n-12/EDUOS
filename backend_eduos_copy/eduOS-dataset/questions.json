@@ -1,0 +1,465 @@
+[
+{
+"question":"Which Python library is commonly used for data manipulation and analysis?",
+"options":["Pandas","NumPy","Matplotlib","Seaborn"],
+"answer":"Pandas",
+"skill":"Python"
+},
+{
+"question":"Which Python structure stores key-value pairs?",
+"options":["List","Tuple","Dictionary","Set"],
+"answer":"Dictionary",
+"skill":"Python"
+},
+
+{
+"question":"Which measure represents the average value of a dataset?",
+"options":["Mean","Variance","Mode","Standard Deviation"],
+"answer":"Mean",
+"skill":"Statistics"
+},
+{
+"question":"Which statistical concept measures data spread?",
+"options":["Variance","Mean","Median","Mode"],
+"answer":"Variance",
+"skill":"Statistics"
+},
+
+{
+"question":"What does a matrix represent in linear algebra?",
+"options":[
+"A scalar value",
+"A rectangular array of numbers",
+"A probability distribution",
+"A programming loop"
+],
+"answer":"A rectangular array of numbers",
+"skill":"Linear Algebra"
+},
+{
+"question":"Which operation combines rows and columns of matrices?",
+"options":[
+"Matrix multiplication",
+"Sorting",
+"Filtering",
+"Hashing"
+],
+"answer":"Matrix multiplication",
+"skill":"Linear Algebra"
+},
+
+{
+"question":"Which library is used in Python for creating plots?",
+"options":["Matplotlib","TensorFlow","Flask","Django"],
+"answer":"Matplotlib",
+"skill":"Data Visualization"
+},
+{
+"question":"Which chart is commonly used to show data distribution?",
+"options":[
+"Histogram",
+"Pie Chart",
+"Scatter Plot",
+"Line Chart"
+],
+"answer":"Histogram",
+"skill":"Data Visualization"
+},
+
+{
+"question":"Which SQL command retrieves data from a database?",
+"options":["SELECT","INSERT","DELETE","DROP"],
+"answer":"SELECT",
+"skill":"SQL"
+},
+{
+"question":"Which SQL clause filters rows in a query?",
+"options":["WHERE","ORDER BY","GROUP BY","HAVING"],
+"answer":"WHERE",
+"skill":"SQL"
+}
+,
+{
+"question":"What does NumPy primarily provide?",
+"options":["Numerical arrays","Web APIs","CSS styling","Authentication"],
+"answer":"Numerical arrays",
+"skill":"Python"
+},
+{
+"question":"Which Python keyword is used to define a function?",
+"options":["func","define","def","function"],
+"answer":"def",
+"skill":"Python"
+},
+
+{
+"question":"Which measure represents the middle value of ordered data?",
+"options":["Median","Variance","Mean","Range"],
+"answer":"Median",
+"skill":"Statistics"
+},
+{
+"question":"Which statistical term describes the most frequent value?",
+"options":["Mode","Mean","Variance","Range"],
+"answer":"Mode",
+"skill":"Statistics"
+},
+
+{
+"question":"What is the identity matrix?",
+"options":[
+"A matrix with ones on diagonal",
+"A matrix with all zeros",
+"A matrix with random values",
+"A triangular matrix"
+],
+"answer":"A matrix with ones on diagonal",
+"skill":"Linear Algebra"
+},
+{
+"question":"Which operation finds the size of vectors in linear algebra?",
+"options":["Magnitude","Transpose","Trace","Rank"],
+"answer":"Magnitude",
+"skill":"Linear Algebra"
+},
+
+{
+"question":"Which chart is best for comparing categories?",
+"options":["Bar Chart","Histogram","Scatter Plot","Heatmap"],
+"answer":"Bar Chart",
+"skill":"Data Visualization"
+},
+{
+"question":"Which visualization shows relationship between two variables?",
+"options":["Scatter Plot","Pie Chart","Histogram","Box Plot"],
+"answer":"Scatter Plot",
+"skill":"Data Visualization"
+},
+
+{
+"question":"Which SQL keyword sorts query results?",
+"options":["ORDER BY","GROUP BY","WHERE","FILTER"],
+"answer":"ORDER BY",
+"skill":"SQL"
+},
+{
+"question":"Which SQL clause groups rows with similar values?",
+"options":["GROUP BY","ORDER BY","WHERE","LIMIT"],
+"answer":"GROUP BY",
+"skill":"SQL"
+},
+
+{
+"question":"Which ML technique predicts continuous values?",
+"options":["Regression","Classification","Clustering","Association"],
+"answer":"Regression",
+"skill":"Machine Learning"
+},
+{
+"question":"Which algorithm groups similar data points?",
+"options":["K-Means","Logistic Regression","Decision Tree","Naive Bayes"],
+"answer":"K-Means",
+"skill":"Machine Learning"
+},
+
+{
+"question":"Which step removes duplicate or missing data?",
+"options":["Data Cleaning","Feature Scaling","Encoding","Model Training"],
+"answer":"Data Cleaning",
+"skill":"Data Cleaning"
+},
+{
+"question":"Which tool is commonly used for cleaning tabular data in Python?",
+"options":["Pandas","React","TensorFlow","Docker"],
+"answer":"Pandas",
+"skill":"Data Cleaning"
+},
+
+{
+"question":"What is feature engineering?",
+"options":[
+"Creating new input variables",
+"Training a neural network",
+"Deploying models",
+"Collecting raw data"
+],
+"answer":"Creating new input variables",
+"skill":"Feature Engineering"
+},
+{
+"question":"Which process transforms raw data into useful features?",
+"options":["Feature Engineering","Visualization","Scraping","Deployment"],
+"answer":"Feature Engineering",
+"skill":"Feature Engineering"
+},
+
+{
+"question":"Which metric measures classification accuracy?",
+"options":["Accuracy","RMSE","MAE","MSE"],
+"answer":"Accuracy",
+"skill":"Model Evaluation"
+},
+{
+"question":"Which technique tests model performance on unseen data?",
+"options":["Cross Validation","Normalization","Encoding","Sampling"],
+"answer":"Cross Validation",
+"skill":"Model Evaluation"
+},
+
+{
+"question":"Which neural network type processes images effectively?",
+"options":["CNN","RNN","SVM","KNN"],
+"answer":"CNN",
+"skill":"Deep Learning"
+},
+{
+"question":"Which library is popular for deep learning?",
+"options":["TensorFlow","NumPy","Bootstrap","Express"],
+"answer":"TensorFlow",
+"skill":"Deep Learning"
+},
+
+{
+"question":"Which tag defines a paragraph in HTML?",
+"options":["<p>","<div>","<span>","<section>"],
+"answer":"<p>",
+"skill":"HTML"
+},
+{
+"question":"Which tag is used for images in HTML?",
+"options":["<img>","<image>","<src>","<picture>"],
+"answer":"<img>",
+"skill":"HTML"
+},
+
+{
+"question":"Which CSS property changes text color?",
+"options":["color","background","font-style","align"],
+"answer":"color",
+"skill":"CSS"
+},
+{
+"question":"Which CSS property controls spacing inside elements?",
+"options":["padding","margin","border","display"],
+"answer":"padding",
+"skill":"CSS"
+},
+
+{
+"question":"Which language runs in the browser?",
+"options":["JavaScript","Python","Java","C++"],
+"answer":"JavaScript",
+"skill":"JavaScript"
+},
+{
+"question":"Which JS keyword declares a block-scoped variable?",
+"options":["let","var","define","constvar"],
+"answer":"let",
+"skill":"JavaScript"
+},
+
+{
+"question":"What does DOM stand for?",
+"options":[
+"Document Object Model",
+"Data Object Management",
+"Dynamic Output Method",
+"Document Output Model"
+],
+"answer":"Document Object Model",
+"skill":"DOM Manipulation"
+},
+{
+"question":"Which method selects an element by ID?",
+"options":[
+"getElementById",
+"queryClass",
+"selectElement",
+"getNode"
+],
+"answer":"getElementById",
+"skill":"DOM Manipulation"
+},
+
+{
+"question":"What ensures websites work on mobile screens?",
+"options":[
+"Responsive Design",
+"Server Rendering",
+"Database Indexing",
+"Code Splitting"
+],
+"answer":"Responsive Design",
+"skill":"Responsive Design"
+},
+{
+"question":"Which CSS unit is commonly used in responsive layouts?",
+"options":["%","px","cm","mm"],
+"answer":"%",
+"skill":"Responsive Design"
+},
+
+{
+"question":"Which library is used to build UI components?",
+"options":["React","Flask","Spring","Django"],
+"answer":"React",
+"skill":"React"
+},
+{
+"question":"Which React hook manages state?",
+"options":["useState","useEffect","useRef","useMemo"],
+"answer":"useState",
+"skill":"React"
+},
+
+{
+"question":"Which concept manages application state in large apps?",
+"options":["State Management","Routing","Rendering","Compilation"],
+"answer":"State Management",
+"skill":"State Management"
+},
+{
+"question":"Which library is commonly used for React state management?",
+"options":["Redux","NumPy","Docker","Bootstrap"],
+"answer":"Redux",
+"skill":"State Management"
+},
+
+{
+"question":"What does API integration allow?",
+"options":[
+"Communication between services",
+"Faster CSS styling",
+"Better HTML rendering",
+"Local file storage"
+],
+"answer":"Communication between services",
+"skill":"API Integration"
+},
+{
+"question":"Which method retrieves API data in JavaScript?",
+"options":["fetch","render","build","compile"],
+"answer":"fetch",
+"skill":"API Integration"
+},
+
+{
+"question":"Which technique improves website load speed?",
+"options":["Lazy Loading","Hardcoding","Inline CSS","Blocking scripts"],
+"answer":"Lazy Loading",
+"skill":"Web Performance"
+},
+{
+"question":"Which tool measures website performance?",
+"options":["Lighthouse","Photoshop","Docker","Excel"],
+"answer":"Lighthouse",
+"skill":"Web Performance"
+},
+
+{
+"question":"What does accessibility ensure?",
+"options":[
+"Websites usable by all users",
+"Faster servers",
+"Better SEO ranking",
+"More animations"
+],
+"answer":"Websites usable by all users",
+"skill":"Accessibility"
+},
+{
+"question":"Which attribute helps screen readers?",
+"options":["aria-label","alt-style","screen-tag","voice-id"],
+"answer":"aria-label",
+"skill":"Accessibility"
+},
+
+{
+"question":"Which runtime executes JavaScript on the server?",
+"options":["Node.js","Apache","Docker","MongoDB"],
+"answer":"Node.js",
+"skill":"Node.js"
+},
+{
+"question":"Which command installs Node packages?",
+"options":["npm install","node add","pkg install","npm run"],
+"answer":"npm install",
+"skill":"Node.js"
+},
+
+{
+"question":"Which framework is commonly used with Node.js?",
+"options":["Express.js","Django","Laravel","Spring"],
+"answer":"Express.js",
+"skill":"Express.js"
+},
+{
+"question":"Express.js is mainly used for?",
+"options":[
+"Building APIs",
+"Designing UI",
+"Training ML models",
+"Creating databases"
+],
+"answer":"Building APIs",
+"skill":"Express.js"
+},
+
+{
+"question":"What does REST stand for?",
+"options":[
+"Representational State Transfer",
+"Remote Execution Standard Tool",
+"Resource Encoding System Transfer",
+"Runtime Event Service Type"
+],
+"answer":"Representational State Transfer",
+"skill":"REST APIs"
+},
+{
+"question":"Which HTTP method retrieves data?",
+"options":["GET","POST","DELETE","PUT"],
+"answer":"GET",
+"skill":"REST APIs"
+},
+
+{
+"question":"What verifies user identity?",
+"options":["Authentication","Authorization","Caching","Encryption"],
+"answer":"Authentication",
+"skill":"Authentication"
+},
+{
+"question":"Which method is widely used for secure login tokens?",
+"options":["JWT","XML","CSV","HTTP"],
+"answer":"JWT",
+"skill":"Authentication"
+},
+
+{
+"question":"Which database type stores documents?",
+"options":["MongoDB","MySQL","PostgreSQL","Oracle"],
+"answer":"MongoDB",
+"skill":"MongoDB"
+},
+{
+"question":"MongoDB stores data in which format?",
+"options":["JSON-like documents","Tables","Graphs","Binary trees"],
+"answer":"JSON-like documents",
+"skill":"MongoDB"
+},
+
+{
+"question":"What improves repeated data access speed?",
+"options":["Caching","Compilation","Minification","Encryption"],
+"answer":"Caching",
+"skill":"Caching"
+},
+{
+"question":"Which tool is commonly used for caching?",
+"options":["Redis","React","Flask","TensorFlow"],
+"answer":"Redis",
+"skill":"Caching"
+}
+
+]
