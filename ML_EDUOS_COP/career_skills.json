@@ -1,0 +1,160 @@
+{
+  "Data Scientist": {
+    "required_skills": ["Python", "Machine Learning", "Pandas", "NumPy", "SQL", "Statistics", "Data Visualization"],
+    "importance": [9, 10, 8, 8, 9, 10, 8],
+    "learning_resources": ["https://www.coursera.org/learn/machine-learning", "https://www.kaggle.com/learn/python"]
+  },
+  "Data Analyst": {
+    "required_skills": ["Excel", "SQL", "Tableau", "Power BI", "Data Cleaning", "Python"],
+    "importance": [8, 9, 9, 9, 8, 7],
+    "learning_resources": ["https://www.coursera.org/specializations/data-analysis"]
+  },
+  "Backend Developer": {
+    "required_skills": ["Node.js", "Express", "MongoDB", "REST APIs", "Docker", "Authentication"],
+    "importance": [9, 9, 8, 9, 7, 8]
+  },
+  "Frontend Developer": {
+    "required_skills": ["HTML", "CSS", "JavaScript", "React", "Redux", "TypeScript"],
+    "importance": [8, 8, 9, 10, 8, 7]
+  },
+  "Full Stack Developer": {
+    "required_skills": ["React", "Node.js", "Express", "MongoDB", "Docker", "Git"],
+    "importance": [9, 9, 8, 9, 7, 8]
+  },
+  "DevOps Engineer": {
+    "required_skills": ["AWS", "Docker", "Kubernetes", "CI/CD", "Jenkins", "Terraform"],
+    "importance": [9, 8, 9, 10, 8, 9]
+  },
+  "Cloud Engineer": {
+    "required_skills": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Linux"],
+    "importance": [10, 9, 9, 8, 9, 8]
+  },
+  "Cybersecurity Analyst": {
+    "required_skills": ["Network Security", "Firewalls", "Ethical Hacking", "Python", "Penetration Testing"],
+    "importance": [10, 9, 9, 7, 9]
+  },
+  "Machine Learning Engineer": {
+    "required_skills": ["Python", "TensorFlow", "PyTorch", "Deep Learning", "Computer Vision", "NLP"],
+    "importance": [10, 9, 9, 10, 8, 8]
+  },
+  "AI Engineer": {
+    "required_skills": ["Python", "Neural Networks", "TensorFlow", "PyTorch", "LLMs"],
+    "importance": [10, 9, 9, 9, 10]
+  },
+  "Database Administrator": {
+    "required_skills": ["SQL", "MySQL", "PostgreSQL", "Oracle", "Backup", "Replication"],
+    "importance": [9, 9, 9, 8, 8, 8]
+  },
+  "Mobile App Developer": {
+    "required_skills": ["Flutter", "Dart", "React Native", "Firebase", "Android Studio"],
+    "importance": [9, 8, 8, 8, 7]
+  },
+  "Game Developer": {
+    "required_skills": ["Unity", "C#", "3D Modelling", "Blender", "Physics Engines"],
+    "importance": [9, 9, 7, 7, 8]
+  },
+  "Blockchain Developer": {
+    "required_skills": ["Solidity", "Ethereum", "Smart Contracts", "Web3.js", "Cryptography"],
+    "importance": [9, 9, 9, 8, 8]
+  },
+  "UI/UX Designer": {
+    "required_skills": ["Figma", "Adobe XD", "Wireframing", "User Research", "Prototyping"],
+    "importance": [9, 8, 8, 9, 9]
+  },
+  "Product Manager": {
+    "required_skills": ["Agile", "Scrum", "Jira", "Market Research", "Roadmapping"],
+    "importance": [8, 8, 7, 9, 9]
+  },
+  "Software Tester": {
+    "required_skills": ["Selenium", "JMeter", "Test Cases", "Manual Testing", "Automation"],
+    "importance": [9, 8, 8, 9, 8]
+  },
+  "Business Analyst": {
+    "required_skills": ["Excel", "SQL", "Business Intelligence", "Communication", "Power BI"],
+    "importance": [9, 8, 9, 8, 9]
+  },
+  "Data Engineer": {
+    "required_skills": ["Python", "Spark", "Hadoop", "ETL", "SQL", "Airflow"],
+    "importance": [9, 9, 9, 9, 9, 8]
+  },
+  "Cloud Architect": {
+    "required_skills": ["AWS", "Azure", "GCP", "Terraform", "Docker", "Networking"],
+    "importance": [10, 9, 9, 8, 8, 9]
+  },
+  "Game Designer": {
+    "required_skills": ["Unity", "Game Mechanics", "Storyboarding", "UX Design"],
+    "importance": [9, 9, 8, 8]
+  },
+  "Embedded Systems Engineer": {
+    "required_skills": ["C", "C++", "Microcontrollers", "IoT", "PCB Design"],
+    "importance": [9, 9, 8, 8, 7]
+  },
+  "IoT Developer": {
+    "required_skills": ["Arduino", "MQTT", "Raspberry Pi", "Sensors", "Python"],
+    "importance": [9, 8, 9, 8, 8]
+  },
+  "Robotics Engineer": {
+    "required_skills": ["ROS", "Python", "C++", "Computer Vision", "Control Systems"],
+    "importance": [9, 9, 9, 8, 9]
+  },
+  "System Administrator": {
+    "required_skills": ["Linux", "Networking", "Shell Scripting", "Firewalls", "Troubleshooting"],
+    "importance": [9, 9, 8, 8, 9]
+  },
+  "Network Engineer": {
+    "required_skills": ["Networking", "Cisco", "Routers", "Switches", "Firewalls"],
+    "importance": [10, 9, 9, 8, 9]
+  },
+  "Computer Vision Engineer": {
+    "required_skills": ["Python", "OpenCV", "Deep Learning", "Image Processing", "CNN"],
+    "importance": [10, 9, 9, 8, 9]
+  },
+  "NLP Engineer": {
+    "required_skills": ["Python", "Transformers", "BERT", "Text Mining", "NLTK"],
+    "importance": [10, 9, 9, 8, 9]
+  },
+  "AI Researcher": {
+    "required_skills": ["Deep Learning", "PyTorch", "TensorFlow", "Research", "Mathematics"],
+    "importance": [10, 9, 9, 9, 9]
+  },
+  "Game AI Developer": {
+    "required_skills": ["Unity", "C#", "AI Algorithms", "Pathfinding", "Machine Learning"],
+    "importance": [9, 9, 9, 8, 8]
+  },
+  "SEO Specialist": {
+    "required_skills": ["SEO", "Google Analytics", "Keyword Research", "Content Strategy"],
+    "importance": [10, 9, 9, 8]
+  },
+  "Digital Marketer": {
+    "required_skills": ["Google Ads", "SEO", "Social Media Marketing", "Content Marketing"],
+    "importance": [9, 9, 9, 8]
+  },
+  "Content Writer": {
+    "required_skills": ["Copywriting", "SEO", "Content Creation", "Blogging"],
+    "importance": [9, 8, 8, 9]
+  },
+  "Video Editor": {
+    "required_skills": ["Premiere Pro", "After Effects", "Storyboarding", "Motion Graphics"],
+    "importance": [9, 9, 8, 8]
+  },
+  "Graphic Designer": {
+    "required_skills": ["Photoshop", "Illustrator", "Figma", "Color Theory"],
+    "importance": [9, 9, 8, 8]
+  },
+  "Financial Analyst": {
+    "required_skills": ["Excel", "Financial Modelling", "SQL", "Power BI"],
+    "importance": [10, 9, 8, 8]
+  },
+  "HR Analyst": {
+    "required_skills": ["Excel", "HR Analytics", "Reporting", "Communication"],
+    "importance": [9, 8, 8, 8]
+  },
+  "Operations Manager": {
+    "required_skills": ["Planning", "Forecasting", "Leadership", "Supply Chain"],
+    "importance": [9, 9, 9, 8]
+  },
+  "Sales Executive": {
+    "required_skills": ["CRM", "Negotiation", "Communication", "Lead Generation"],
+    "importance": [9, 9, 9, 8]
+  }
+}

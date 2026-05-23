@@ -1,0 +1,19 @@
+# Node
+backend_eduos_copy/node_modules/
+backend_eduos_copy/.env
+
+# Angular
+EduOS/node_modules/
+EduOS/dist/
+EduOS/.angular/
+
+# Python
+ML_EDUOS_COP/__pycache__/
+ML_EDUOS_COP/*.pyc
+ML_EDUOS_COP/career_model.pkl
+ML_EDUOS_COP/vectorizer.pkl
+ML_EDUOS_COP/skill_index.faiss
+ML_EDUOS_COP/skill_embs.npy
+
+# Mac
+.DS_Store
