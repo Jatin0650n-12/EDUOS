@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 import json
 import os
@@ -9,16 +9,10 @@ from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # ------------------------------
-# 1. Load Embedding Model
-# ------------------------------
-print("🔹 Loading embedding model...")
-embedder = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-
-# ------------------------------
-# 2. Build Skill Index (No FAISS)
+# 1. Skill List
 # ------------------------------
 skill_names = [
     "Python", "Java", "C++", "HTML", "CSS", "JavaScript", "React", "Angular", "Node.js",
@@ -37,12 +31,14 @@ skill_names = [
     "Postman", "Selenium", "JMeter", "GitHub Actions", "GitLab CI", "Helm", "GCP", "Azure"
 ]
 
-print("⚙️ Building skill embeddings...")
-skill_embs = np.array(embedder.encode(skill_names, normalize_embeddings=True))
-print("✅ Skill embeddings ready!")
+# Build TF-IDF skill index (very lightweight)
+print("⚙️ Building skill index...")
+vectorizer_skills = TfidfVectorizer(analyzer='char_wb', ngram_range=(2, 4))
+skill_embs = vectorizer_skills.fit_transform(skill_names)
+print("✅ Skill index ready!")
 
 # ------------------------------
-# 3. Load Career Model
+# 2. Load Career Model
 # ------------------------------
 try:
     model = pickle.load(open("career_model.pkl", "rb"))
@@ -54,7 +50,7 @@ except Exception as e:
     vectorizer = None
 
 # ------------------------------
-# 4. Dummy Students for Collaborative Filtering
+# 3. Dummy Students
 # ------------------------------
 students = [
     {"studentId":"S1","jobRole":"Data Scientist","quizScore":85,"responseTime":120,"resourcesUsed":["R1","R2","R3"]},
@@ -65,22 +61,10 @@ students = [
     {"studentId":"S6","jobRole":"Data Analyst","quizScore":75,"responseTime":140,"resourcesUsed":["R14","R15"]},
     {"studentId":"S7","jobRole":"DevOps Engineer","quizScore":60,"responseTime":200,"resourcesUsed":["R16","R17"]},
     {"studentId":"S8","jobRole":"Cloud Engineer","quizScore":80,"responseTime":130,"resourcesUsed":["R18","R19","R20"]},
-    {"studentId":"S9","jobRole":"Data Scientist","quizScore":78,"responseTime":150,"resourcesUsed":["R1","R21"]},
-    {"studentId":"S10","jobRole":"Frontend Developer","quizScore":88,"responseTime":125,"resourcesUsed":["R4","R22","R23"]},
-    {"studentId":"S11","jobRole":"Backend Developer","quizScore":82,"responseTime":135,"resourcesUsed":["R6","R24"]},
-    {"studentId":"S12","jobRole":"Full Stack Developer","quizScore":70,"responseTime":160,"resourcesUsed":["R9","R25","R26"]},
-    {"studentId":"S13","jobRole":"Machine Learning Engineer","quizScore":92,"responseTime":110,"resourcesUsed":["R11","R27"]},
-    {"studentId":"S14","jobRole":"Data Analyst","quizScore":68,"responseTime":175,"resourcesUsed":["R14","R28"]},
-    {"studentId":"S15","jobRole":"DevOps Engineer","quizScore":73,"responseTime":145,"resourcesUsed":["R16","R29","R30"]},
-    {"studentId":"S16","jobRole":"Cloud Engineer","quizScore":85,"responseTime":120,"resourcesUsed":["R18","R31"]},
-    {"studentId":"S17","jobRole":"Data Scientist","quizScore":88,"responseTime":115,"resourcesUsed":["R1","R32","R33"]},
-    {"studentId":"S18","jobRole":"Frontend Developer","quizScore":65,"responseTime":180,"resourcesUsed":["R4","R34"]},
-    {"studentId":"S19","jobRole":"Backend Developer","quizScore":90,"responseTime":105,"resourcesUsed":["R6","R35"]},
-    {"studentId":"S20","jobRole":"Full Stack Developer","quizScore":80,"responseTime":130,"resourcesUsed":["R9","R36","R37"]}
 ]
 
 # ------------------------------
-# 5. Routes
+# 4. Routes
 # ------------------------------
 
 @app.route("/recommend-skills", methods=["POST"])
@@ -92,10 +76,7 @@ def recommend_skills():
 
     print(f"🧠 Received skills: {extracted_skills}")
 
-    # Encode input skills
-    query_embs = np.array(embedder.encode(extracted_skills, normalize_embeddings=True))
-
-    # Compute cosine similarity between input skills and all skill embeddings
+    query_embs = vectorizer_skills.transform(extracted_skills)
     similarities = cosine_similarity(query_embs, skill_embs)
 
     recommended = set()
@@ -104,7 +85,6 @@ def recommend_skills():
         for idx in top_indices:
             recommended.add(skill_names[idx])
 
-    # Remove already present skills
     recommended = list(recommended - set(extracted_skills))
 
     return jsonify({
@@ -119,7 +99,6 @@ def predict_career():
     try:
         data = request.get_json()
         skills = data.get("skills", [])
-
         if not skills:
             return jsonify({"success": False, "message": "Please provide skills"}), 400
 
@@ -127,10 +106,7 @@ def predict_career():
         X = vectorizer.transform([skill_text])
         prediction = model.predict(X)[0]
 
-        return jsonify({
-            "success": True,
-            "predicted_role": prediction
-        })
+        return jsonify({"success": True, "predicted_role": prediction})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
 
@@ -144,8 +120,7 @@ def recommend():
     target_job = data['jobRole']
     target_score = 0.7 * (data['quizScore'] / 100) + 0.3 * (1 - data['responseTime'] / 300)
 
-    role_students = [s for s in students if s["jobRole"] == target_job and s["studentId"] != data["studentId"]]
-
+    role_students = [s for s in students if s["jobRole"] == target_job and s["studentId"] != data.get("studentId")]
     neighbors = []
     for s in role_students:
         similarity = 1 / (1 + abs(compute_score(s) - target_score))
@@ -157,7 +132,7 @@ def recommend():
     recommended = {}
     for n, sim in top_neighbors:
         for r in n["resourcesUsed"]:
-            if r not in data["resourcesUsed"]:
+            if r not in data.get("resourcesUsed", []):
                 recommended[r] = recommended.get(r, 0) + sim
 
     recommended_sorted = sorted(recommended.keys(), key=lambda x: recommended[x], reverse=True)
@@ -215,16 +190,16 @@ def forecast_growth():
     learning_rate = len(skills) / (exp + 1)
 
     role_skill_map = {
-        "Data Scientist": ["Python", "R", "Machine Learning", "Pandas", "NumPy", "Statistics", "SQL", "TensorFlow", "Data Visualization", "Matplotlib"],
-        "Backend Developer": ["Python", "Java", "C#", "Node.js", "Express", "SQL", "MongoDB", "APIs", "Docker", "Git", "AWS"],
-        "Frontend Developer": ["HTML", "CSS", "JavaScript", "React", "Angular", "TypeScript", "UI/UX", "Bootstrap", "Redux", "Tailwind"],
-        "Full Stack Developer": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "SQL", "Git", "AWS"],
-        "Machine Learning Engineer": ["Python", "TensorFlow", "PyTorch", "Machine Learning", "Deep Learning", "SQL", "NLP", "Computer Vision"],
-        "Cloud Engineer": ["AWS", "Azure", "Docker", "Kubernetes", "Linux", "Terraform", "Networking", "CI/CD"],
-        "Cybersecurity Analyst": ["Network Security", "Penetration Testing", "Linux", "Firewalls", "SIEM", "Encryption", "Incident Response"],
+        "Data Scientist": ["Python", "R", "Machine Learning", "Pandas", "NumPy", "Statistics", "SQL", "TensorFlow"],
+        "Backend Developer": ["Python", "Java", "Node.js", "Express", "SQL", "MongoDB", "Docker", "Git"],
+        "Frontend Developer": ["HTML", "CSS", "JavaScript", "React", "Angular", "TypeScript", "Bootstrap"],
+        "Full Stack Developer": ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB", "SQL", "Git"],
+        "Machine Learning Engineer": ["Python", "TensorFlow", "PyTorch", "Machine Learning", "Deep Learning", "SQL"],
+        "Cloud Engineer": ["AWS", "Azure", "Docker", "Kubernetes", "Linux", "Terraform", "CI/CD"],
+        "Cybersecurity Analyst": ["Network Security", "Penetration Testing", "Linux", "Firewalls", "SIEM"],
         "DevOps Engineer": ["Linux", "Docker", "Kubernetes", "Jenkins", "AWS", "Terraform", "CI/CD", "Git"],
-        "Android Developer": ["Kotlin", "Java", "Android Studio", "Firebase", "REST API", "Git", "MVVM"],
-        "Data Engineer": ["Python", "Spark", "Hadoop", "ETL", "SQL", "Airflow", "Kafka", "Data Warehousing"],
+        "Android Developer": ["Kotlin", "Java", "Android Studio", "Firebase", "REST API", "Git"],
+        "Data Engineer": ["Python", "Spark", "Hadoop", "ETL", "SQL", "Airflow", "Kafka"],
     }
 
     role_skills = role_skill_map.get(target_role, [])
@@ -264,6 +239,5 @@ def forecast_growth():
 
 
 if __name__ == "__main__":
-    import os
     port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port, debug=False)
