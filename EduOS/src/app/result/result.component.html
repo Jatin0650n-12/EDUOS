@@ -1,0 +1,31 @@
+<div class="result-container">
+
+  <h2>Quiz Result</h2>
+
+  <p>
+    Accuracy : {{result.accuracy * 100}} %
+  </p>
+
+  <p>
+    Average Response Time : {{result.avgResponseTime}} sec
+  </p>
+
+  <h3>Strong Skills</h3>
+  <ul>
+    <li *ngFor="let skill of result.strongSkills">
+      {{skill}}
+    </li>
+  </ul>
+
+  <h3>Weak Skills</h3>
+  <ul>
+    <li *ngFor="let skill of result.weakSkills">
+      {{skill}}
+    </li>
+  </ul>
+
+  <button (click)="generateRoadmap()">
+    Generate Personalized Roadmap
+  </button>
+
+</div>

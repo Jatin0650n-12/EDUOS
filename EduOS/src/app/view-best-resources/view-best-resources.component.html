@@ -1,0 +1,21 @@
+<div class="best-resources-container">
+  <h2>Recommended Resources</h2>
+
+  <label for="jobRole">Select Job Role:</label>
+<select id="jobRole" [(ngModel)]="selectedJobRole">
+  <option *ngFor="let role of jobRoles" [value]="role">{{ role }}</option>
+</select>
+
+  <button (click)="fetchRecommendations()">View Best Resources</button>
+
+  <div *ngIf="loading">Loading recommendations...</div>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <ul *ngIf="recommendedResources.length">
+    <li *ngFor="let resource of recommendedResources">{{ resource }}</li>
+  </ul>
+
+  <div *ngIf="!loading && recommendedResources.length === 0 && !errorMessage">
+    No recommendations yet.
+  </div>
+</div>

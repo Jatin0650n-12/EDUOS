@@ -1,0 +1,15 @@
+<div *ngIf="questions.length">
+
+<h3>Question {{currentIndex+1}}</h3>
+
+<p>
+{{questions[currentIndex]?.question}}
+</p>
+
+<button
+*ngFor="let option of questions[currentIndex]?.options"
+(click)="answerQuestion(option)">
+{{option}}
+</button>
+
+</div>

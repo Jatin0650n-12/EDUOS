@@ -1,0 +1,57 @@
+<header class="ch-header" role="banner">
+  <div class="container ch-header-inner">
+    <div class="brand">
+      <a class="logo-link" href="/" aria-label="Careerfolio home">
+        <div class="logo-mark" aria-hidden="true">
+          <!-- simple SVG mark -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="6" fill="#0ea5a4"/>
+            <path d="M7 14 L10.5 9 L13 12 L17 6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">EduOS</div>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#features" class="nav-link">Features</a>
+        <!-- <a href="#pricing" class="nav-link">Pricing</a> -->
+
+
+      </nav>
+    </div>
+
+
+
+
+    <div class="actions">
+    
+   <a  routerLink="/roles">
+  🚀 Roadmap Generator
+   </a>
+
+
+   <a  routerLink="/copilot">
+  Copilot
+   </a>
+
+   <a  routerLink="/view-best">
+  Get Resources
+   </a>
+    
+
+      <a *ngIf="!(isAuthenticated$ | async)" routerLink="/login" class="link">Login</a>
+    
+       <a *ngIf="isAuthenticated$ | async" routerLink="/dashboard" class="icon-link" title="Dashboard">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 3h18v18H3z"></path>
+    <path d="M7 14h2v4H7zM11 10h2v8h-2zM15 6h2v12h-2z"></path>
+  </svg>
+</a>
+
+       <a style="cursor: pointer;" *ngIf="isAuthenticated$ | async" (click)="logout()" class="link">Logout</a>
+      <a class="link" href="/signup">Get started</a>
+    </div>
+  </div>
+</header>

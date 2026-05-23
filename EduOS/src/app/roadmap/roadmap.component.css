@@ -1,0 +1,87 @@
+.roadmap-container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.weeks-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:25px;
+}
+
+.week-card{
+  background:white;
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  transition:transform .2s;
+}
+
+.week-card:hover{
+  transform:translateY(-5px);
+}
+
+.week-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.skill-badge{
+  background:#4f46e5;
+  color:white;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:13px;
+}
+
+.section{
+  margin-top:15px;
+}
+
+.section h3{
+  margin-bottom:10px;
+  color:#333;
+}
+
+.topics{
+  padding-left:18px;
+}
+
+.topics li{
+  margin-bottom:8px;
+}
+
+.topic-desc{
+  font-size:13px;
+  color:#666;
+  margin:3px 0 0 0;
+}
+
+.task-card{
+  background:#f8f9ff;
+  border-left:4px solid #4f46e5;
+  padding:12px;
+  border-radius:6px;
+  margin-bottom:10px;
+}
+
+.task-card h4{
+  margin:0;
+  font-size:15px;
+}
+
+.task-card p{
+  margin:5px 0 0 0;
+  font-size:14px;
+  color:#555;
+}

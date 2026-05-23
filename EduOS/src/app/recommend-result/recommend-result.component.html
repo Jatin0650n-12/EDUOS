@@ -1,0 +1,27 @@
+<!-- ===== AI PREDICTED CAREER PATH ===== -->
+
+
+
+<div class="recommend-container">
+
+    <div class="prediction-card" *ngIf="predictedRole">
+
+  <h2>🤖 AI Predicted Career Path</h2>
+  <div class="predicted-role">
+    {{ predictedRole }}
+  </div>
+
+</div>
+
+  <h1>🎯 Skill Recommendations</h1>
+  <p class="subtitle">Based on your resume analysis</p>
+
+  <div class="skill-card">
+    <span class="skill-chip" *ngFor="let skill of data?.recommended_skills">
+      {{ skill }}
+    </span>
+  </div>
+
+  <button (click)="backToDashboard()">⬅ Back to Dashboard</button>
+
+</div>

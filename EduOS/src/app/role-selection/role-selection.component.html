@@ -1,0 +1,20 @@
+<h2 style="text-align: center;">Select Your Career Role</h2>
+
+<div class="role-container">
+
+<div class="role-card"
+*ngFor="let r of roles"
+(click)="selectedRole = r"
+[ngClass]="{'selected': selectedRole === r}">
+
+{{r}}
+
+</div>
+
+</div>
+
+<br>
+
+<button (click)="generateQuiz()">
+Generate Quiz
+</button>

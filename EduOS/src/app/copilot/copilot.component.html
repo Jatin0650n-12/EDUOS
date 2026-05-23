@@ -1,0 +1,16 @@
+<!-- copilot.component.html -->
+<div class="copilot-container">
+  <div class="chat-window">
+    <div *ngFor="let message of chat" [ngClass]="message.sender" class="chat-message">
+      <span>{{ message.text }}</span>
+    </div>
+    <div *ngIf="loading" class="chat-message copilot">
+      <span>Typing...</span>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input [(ngModel)]="userQuestion" placeholder="Ask your question..." (keyup.enter)="sendQuestion()" />
+    <button (click)="sendQuestion()">Send</button>
+  </div>
+</div>

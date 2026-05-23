@@ -1,0 +1,76 @@
+.best-resources-container {
+  max-width: 600px;
+  width: 95%;
+  margin: 20px auto;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.best-resources-container h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.best-resources-container button {
+  display: block;
+  margin: 0 auto 16px auto;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.best-resources-container button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+}
+
+.loading, .error {
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: #f2f2f2;
+  margin: 6px 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .best-resources-container {
+    padding: 12px;
+  }
+
+  ul li {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 8px 20px;
+  }
+}
+
+select {
+  padding: 8px 12px;
+  margin: 8px 0 16px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}

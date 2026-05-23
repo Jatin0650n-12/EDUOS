@@ -1,0 +1,59 @@
+<div class="roadmap-container" *ngIf="roadmapData.length">
+
+  <h1 class="title">Your Learning Roadmap</h1>
+
+  <div class="weeks-wrapper">
+
+    <div class="week-card" *ngFor="let week of roadmapData">
+
+      <div class="week-header">
+        <h2>Week {{week.week}}</h2>
+        <span class="skill-badge">{{week.focus_skill}}</span>
+      </div>
+
+      <!-- Topics -->
+      <div class="section">
+        <h3>📚 Topics</h3>
+
+        <ul class="topics">
+          <li *ngFor="let topic of week.learning_topics">
+
+            <ng-container *ngIf="topic.topic; else simpleTopic">
+              <b>{{topic.topic}}</b>
+              <p class="topic-desc">{{topic.description}}</p>
+            </ng-container>
+
+            <ng-template #simpleTopic>
+              {{topic}}
+            </ng-template>
+
+          </li>
+        </ul>
+      </div>
+
+      <!-- Practice Tasks -->
+      <div class="section">
+        <h3>💻 Practice Tasks</h3>
+
+        <div class="task-card" *ngFor="let task of week.practice_task">
+
+          <ng-container *ngIf="task.title; else simpleTask">
+
+            <h4>{{task.title}}</h4>
+            <p>{{task.details}}</p>
+
+          </ng-container>
+
+          <ng-template #simpleTask>
+            <p>{{task}}</p>
+          </ng-template>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

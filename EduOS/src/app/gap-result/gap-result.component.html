@@ -1,0 +1,68 @@
+<div class="gap-container">
+
+  <h1>📊 Skill Gap Analysis</h1>
+  <h2>{{ data?.target_role }}</h2>
+
+  <!-- ===== SUMMARY CARDS ===== -->
+  <div class="summary-grid">
+
+    <div class="summary-card">
+      <p>Total Skills Required</p>
+      <h3>{{ data?.total_skills_required }}</h3>
+    </div>
+
+    <div class="summary-card">
+      <p>Matched Skills</p>
+      <h3>{{ data?.matched_skills_count }}</h3>
+    </div>
+
+    <div class="summary-card">
+      <p>Missing Skills</p>
+      <h3>{{ data?.missing_skills_count }}</h3>
+    </div>
+
+    <div class="summary-card highlight">
+      <p>Readiness</p>
+      <h3>{{ data?.readiness_percentage }}%</h3>
+    </div>
+
+  </div>
+
+  <!-- ===== READINESS BAR ===== -->
+  <div class="readiness-section">
+    <p>Career Readiness Level</p>
+    <div class="readiness-bar">
+      <div class="readiness-fill" [style.width.%]="data?.readiness_percentage"></div>
+    </div>
+  </div>
+
+  <!-- ===== MATCHED SKILLS ===== -->
+  <div class="skills-section">
+    <h3>✅ Matched Skills</h3>
+
+    <div *ngIf="data?.matched_skills?.length === 0" class="empty-text">
+      No matching skills found
+    </div>
+
+    <span class="skill match"
+      *ngFor="let skill of data?.matched_skills">
+      {{ skill }}
+    </span>
+  </div>
+
+  <!-- ===== MISSING SKILLS WITH IMPORTANCE ===== -->
+  <div class="skills-section">
+    <h3>❌ Missing Skills (High Priority)</h3>
+
+    <div class="missing-card"
+      *ngFor="let item of data?.missing_skills">
+
+      <span class="skill-name">{{ item.skill | titlecase }}</span>
+      <span class="importance">Importance: {{ item.importance }}/10</span>
+
+    </div>
+  </div>
+
+  <button (click)="backToDashboard()">⬅ Back to Dashboard</button>
+
+</div>

@@ -1,0 +1,62 @@
+<div class="forecast-container">
+
+  <h1>🚀 Career Forecast Report</h1>
+  <h2>{{ data?.target_role }}</h2>
+
+  <!-- ===== TOP STATS ===== -->
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <p>Career Readiness</p>
+      <h3>{{ data?.career_readiness_score | number:'1.0-2' }}%</h3>
+    </div>
+
+    <div class="stat-card">
+      <p>Skill Coverage</p>
+      <h3>{{ data?.skill_coverage_percent | number:'1.0-2' }}%</h3>
+    </div>
+
+    <div class="stat-card">
+      <p>Job Ready In</p>
+      <h3>{{ data?.job_ready_in_months | number:'1.1-2' }} Months</h3>
+    </div>
+
+  </div>
+
+  <!-- ===== READINESS PROGRESS ===== -->
+  <div class="progress-section">
+    <p>Overall Readiness Level</p>
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="data?.career_readiness_score"></div>
+    </div>
+  </div>
+
+  <!-- ===== FORECAST CURVE ===== -->
+  <div class="curve-section">
+    <h3>📈 Growth Forecast</h3>
+    <div class="curve">
+      <span *ngFor="let point of data?.forecast_curve">
+        {{ point | number:'1.0-0' }}%
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== MATCHING SKILLS ===== -->
+  <div class="skills-section match">
+    <h3>✅ Matching Skills</h3>
+    <span class="skill match-skill" *ngFor="let skill of data?.matching_skills">
+      {{ skill }}
+    </span>
+  </div>
+
+  <!-- ===== MISSING SKILLS ===== -->
+  <div class="skills-section missing">
+    <h3>❌ Missing Skills</h3>
+    <span class="skill miss-skill" *ngFor="let skill of data?.missing_skills">
+      {{ skill }}
+    </span>
+  </div>
+
+  <button (click)="backToDashboard()">⬅ Back to Dashboard</button>
+
+</div>
