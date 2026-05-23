@@ -4,9 +4,7 @@ const http = require('http');
 const cors = require('cors');
 const db = require('./database/db')
 
-app.get("/", (req, res) => {
-  res.send("EDUOS Backend is running 🚀");
-});
+
 
 const authRoutes = require('./routes/auth-routes');
 const fileRoutes = require('./routes/file-routes');
@@ -25,7 +23,9 @@ const groq = new Groq({
   apiKey: GROQ_API_KEY
 });
 const app = express()
-
+app.get("/", (req, res) => {
+  res.send("EDUOS Backend is running 🚀");
+});
 db();
 
 
